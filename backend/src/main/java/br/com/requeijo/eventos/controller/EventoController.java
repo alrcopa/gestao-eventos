@@ -1,8 +1,8 @@
 package br.com.requeijo.eventos.controller;
 
-import br.com.requeijo.eventos.dto.EventRequestDTO;
-import br.com.requeijo.eventos.dto.EventResponseDTO;
-import br.com.requeijo.eventos.service.EventService;
+import br.com.requeijo.eventos.dto.EventoRequestDTO;
+import br.com.requeijo.eventos.dto.EventoResponseDTO;
+import br.com.requeijo.eventos.service.EventoService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -18,30 +18,30 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/events")
+@RequestMapping("/api/eventos")
 @RequiredArgsConstructor
-public class EventController {
+public class EventoController {
 
-    private final EventService service;
+    private final EventoService service;
 
     @GetMapping
-    public Page<EventResponseDTO> list(@RequestParam(defaultValue = "0") int page,
-                                       @RequestParam(defaultValue = "10") int pageSize) {
+    public Page<EventoResponseDTO> list(@RequestParam(defaultValue = "0") int page,
+                                        @RequestParam(defaultValue = "10") int pageSize) {
         return service.listEvents(page, pageSize);
     }
 
     @GetMapping("/{id}")
-    public EventResponseDTO get(@PathVariable Long id) {
+    public EventoResponseDTO get(@PathVariable Long id) {
         return service.getEventById(id);
     }
 
     @PostMapping
-    public EventResponseDTO create(@Valid @RequestBody EventRequestDTO requestDTO) {
+    public EventoResponseDTO create(@Valid @RequestBody EventoRequestDTO requestDTO) {
         return service.createEvent(requestDTO);
     }
 
     @PutMapping("/{id}")
-    public EventResponseDTO update(@PathVariable Long id, @Valid @RequestBody EventRequestDTO requestDTO) {
+    public EventoResponseDTO update(@PathVariable Long id, @Valid @RequestBody EventoRequestDTO requestDTO) {
         return service.updateEvent(id, requestDTO);
     }
 

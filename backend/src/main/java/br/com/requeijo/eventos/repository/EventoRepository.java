@@ -1,6 +1,6 @@
 package br.com.requeijo.eventos.repository;
 
-import br.com.requeijo.eventos.model.Event;
+import br.com.requeijo.eventos.model.Evento;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -9,10 +9,10 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface EventRepository extends JpaRepository<Event, Long> {
+public interface EventoRepository extends JpaRepository<Evento, Long> {
 
-    Page<Event> findAllByDeletedFalse(Pageable pageable);
+    Page<Evento> findAllByDeletedFalse(Pageable pageable);
 
-    Optional<Event> findByIdAndDeletedFalse(Long id);
+    Optional<Evento> findByIdAndDeletedFalse(Long id);
 }
 

@@ -8,7 +8,7 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 @Data
-public class EventRequestDTO {
+public class EventoRequestDTO {
 
     @NotBlank
     @Size(max = 100)
