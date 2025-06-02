@@ -26,8 +26,8 @@ public class EventController {
 
     @GetMapping
     public Page<EventResponseDTO> list(@RequestParam(defaultValue = "0") int page,
-                                       @RequestParam(defaultValue = "10") int size) {
-        return service.listEvents(page, size);
+                                       @RequestParam(defaultValue = "10") int pageSize) {
+        return service.listEvents(page, pageSize);
     }
 
     @GetMapping("/{id}")
