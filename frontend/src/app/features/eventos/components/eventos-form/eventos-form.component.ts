@@ -37,7 +37,9 @@ export class EventosFormComponent implements OnInit {
         evento.title,
         [Validators.required, Validators.minLength(5), Validators.maxLength(100)]
       ],
-      description: [evento.description, [Validators.required]]
+      description: [evento.description, [Validators.required]],
+      eventDate: [evento.eventDate, [Validators.required]],
+      location: [evento.location, [Validators.required]]
     });
   }
 

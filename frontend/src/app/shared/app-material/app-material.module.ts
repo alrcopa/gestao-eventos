@@ -13,6 +13,8 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { YouTubePlayerModule } from '@angular/youtube-player';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   exports: [
@@ -29,7 +31,10 @@ import { YouTubePlayerModule } from '@angular/youtube-player';
     MatSnackBarModule,
     MatSidenavModule,
     YouTubePlayerModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatNativeDateModule,
   ]
 })
 export class AppMaterialModule { }

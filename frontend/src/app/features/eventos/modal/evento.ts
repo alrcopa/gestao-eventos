@@ -3,8 +3,8 @@ export interface Evento {
 
   title: string;
   description: string;
-  // eventDate: string;
-  // location: string;
+  eventDate: string;
+  location: string;
   // createdAt: string;
   // updatedAt: string;
 

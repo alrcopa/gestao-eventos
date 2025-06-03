@@ -16,6 +16,6 @@ export class EventoResolver  {
       return this.service.loadById(route.params['id']);
     }
 
-    return of({ _id: '', title: '', description: '' });
+    return of({ _id: 0, title: '', description: '', eventDate: '', location: '' });
   }
 }
