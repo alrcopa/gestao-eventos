@@ -1,0 +1,48 @@
+<mat-table [dataSource]="eventos">
+  <!-- Name Column -->
+  <ng-container matColumnDef="title">
+    <mat-header-cell *matHeaderCellDef>Titulo</mat-header-cell>
+    <mat-cell *matCellDef="let evento">{{ evento.title }}</mat-cell>
+  </ng-container>
+
+  <!-- Category Column -->
+  <ng-container matColumnDef="description">
+    <mat-header-cell *matHeaderCellDef>Descrição</mat-header-cell>
+    <mat-cell *matCellDef="let evento">{{ evento.description }}</mat-cell>
+  </ng-container>
+
+  <!-- Actions Column -->
+  <ng-container matColumnDef="actions">
+    <mat-header-cell *matHeaderCellDef class="action-column">
+      <button
+        mat-mini-fab
+        color="accent"
+        aria-label="Add a new Course"
+        (click)="onAdd()"
+        class="action-column-header">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-header-cell>
+
+    <mat-cell *matCellDef="let evento" class="action-column">
+      <button
+        mat-icon-button
+        color="primary"
+        aria-label="Update Course"
+        (click)="onEdit(evento)">
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button
+        mat-icon-button
+        color="warn"
+        aria-label="Remove Course"
+        (click)="onRemove(evento)">
+        <mat-icon>delete</mat-icon>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+</mat-table>

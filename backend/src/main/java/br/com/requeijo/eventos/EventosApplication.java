@@ -28,7 +28,7 @@ public class EventosApplication {
 
 	private void extracted(EventoRepository eventoRepository) {
 		eventoRepository.deleteAll();
-		for (int i = 1; i < 11; i++) {
+		for (int i = 1; i < 20; i++) {
 			Evento c = new Evento();
 			c.setDescription("Description " + i);
 			c.setTitle("Event " + i);
