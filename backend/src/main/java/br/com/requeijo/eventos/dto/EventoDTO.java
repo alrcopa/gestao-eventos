@@ -1,12 +1,18 @@
 package br.com.requeijo.eventos.dto;
 
-import lombok.Data;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 import java.time.LocalDateTime;
 
-@Data
-public class EventoResponseDTO {
+@Getter
+@Setter
+@ToString
+public class EventoDTO {
 
+    @JsonProperty("_id")
     private Long id;
     private String title;
     private String description;
@@ -14,6 +20,7 @@ public class EventoResponseDTO {
     private String location;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+
 
 }
 
