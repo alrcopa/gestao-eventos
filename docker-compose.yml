@@ -1,0 +1,43 @@
+services:
+
+  db:
+    image: mysql:8.0
+    container_name: gestao-eventos-db
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    networks:
+      - event-net
+
+  backend:
+    build: ./backend
+    container_name: gestao-eventos-backend
+    restart: unless-stopped
+    env_file: .env
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    networks:
+      - event-net
+
+  frontend:
+    build: ./frontend
+    container_name: gestao-eventos-frontend
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - event-net
+
+volumes:
+  dbdata:
+
+networks:
+  event-net:
+    driver: bridge

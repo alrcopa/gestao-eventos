@@ -30,15 +30,15 @@ export class EventosService {
     );
   }
 
-  loadById(id: string) {
+  loadById(id: number) {
     if (this.cache.length > 0) {
-      const record = this.cache.find(course => `${course._id}` === `${id}`);
+      const record = this.cache.find(evento => `${evento._id}` === `${id}`);
       return record != null ? of(record) : this.getById(id);
     }
     return this.getById(id);
   }
 
-  private getById(id: string) {
+  private getById(id: number) {
     return this.http.get<Evento>(`${this.API}/${id}`).pipe(first());
   }
 
