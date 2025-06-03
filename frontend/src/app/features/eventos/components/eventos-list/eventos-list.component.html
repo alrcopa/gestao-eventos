@@ -1,4 +1,20 @@
 <mat-table [dataSource]="eventos">
+
+    <!-- <ng-container matColumnDef="title">
+    <mat-header-cell *matHeaderCellDef>Course</mat-header-cell>
+    <mat-cell *matCellDef="let evento"
+      ><a (click)="onView(evento)">{{ evento.title }}</a></mat-cell
+    >
+  </ng-container> -->
+
+
+    <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Course</mat-header-cell>
+    <mat-cell *matCellDef="let evento"
+      ><a (click)="onView(evento)">{{ evento.title }}</a></mat-cell
+    >
+  </ng-container>
+
   <!-- Name Column -->
   <ng-container matColumnDef="title">
     <mat-header-cell *matHeaderCellDef>Titulo</mat-header-cell>

@@ -10,9 +10,10 @@ import { ConteinerEventosComponent } from './conteiners/conteiner-eventos.compon
 import { EventosRoutingModule } from './eventos-routing.module';
 import { EventosListComponent } from './components/eventos-list/eventos-list.component';
 import { EventosFormComponent } from './components/eventos-form/eventos-form.component';
+import { EventosViewComponent } from './components/eventos-view/eventos-view.component';
 
 @NgModule({
-  declarations: [ConteinerEventosComponent, EventosListComponent, EventosFormComponent],
+  declarations: [ConteinerEventosComponent, EventosListComponent, EventosFormComponent, EventosViewComponent],
   imports: [
     CommonModule,
     EventosRoutingModule,

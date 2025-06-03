@@ -8,11 +8,13 @@ import { Evento } from '../../modal/evento';
 })
 export class EventosListComponent {
 
+
   @Input() eventos: Evento[] = [];
   @Output() details: EventEmitter<Evento> = new EventEmitter(false);
   @Output() edit: EventEmitter<Evento> = new EventEmitter(false);
   @Output() remove: EventEmitter<Evento> = new EventEmitter(false);
   @Output() add: EventEmitter<boolean> = new EventEmitter(false);
+  @Output() view: EventEmitter<Evento> = new EventEmitter(false);
 
   readonly displayedColumns = ['title', 'description', 'actions'];
 
@@ -30,5 +32,10 @@ export class EventosListComponent {
 
   onRemove(record: Evento) {
     this.remove.emit(record);
+  }
+
+
+  onView(record: Evento) {
+    this.view.emit(record);
   }
 }

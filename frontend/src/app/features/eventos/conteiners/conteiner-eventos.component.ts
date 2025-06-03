@@ -58,6 +58,10 @@ export class ConteinerEventosComponent {
     });
   }
 
+  onView(course: Evento) {
+    this.router.navigate(['view', course._id], { relativeTo: this.route });
+  }
+
   onAdd() {
     this.router.navigate(['new'], { relativeTo: this.route });
   }
